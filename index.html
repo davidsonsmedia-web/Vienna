@@ -13,13 +13,13 @@
       --muted: #98989d;
       --day-header: #ffffff;
       --time: #d1d1d6;
-      --sight: #30d158;
-      --food: #ff9f0a;
-      --shop: #ff375f;
-      --music: #bf5af2;
-      --flight: #5e5ce6;
-      --hotel: #00c7be;
-      --ticket: #ffd60a;
+      --sight: #39ff14;
+      --food: #ff9e00;
+      --shop: #ff007f;
+      --music: #c77dff;
+      --flight: #00d2ff;
+      --hotel: #00f5d4;
+      --ticket: #ff2a5f;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; }
     body { background: var(--bg); color: var(--text); padding: 12px; max-width: 600px; margin: 0 auto; -webkit-font-smoothing: antialiased; }
@@ -36,7 +36,7 @@
     .checkbox-container { display: flex; align-items: center; cursor: pointer; flex-shrink: 0; }
     .checkbox-container input { display: none; }
     .checkmark { width: 22px; height: 22px; border: 2px solid #48484a; border-radius: 6px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; }
-    .checkbox-container input:checked ~ .checkmark { background: var(--sight); border-color: var(--sight); }
+    .checkbox-container input:checked ~ .checkmark { background: var(--sight); border-color: var(--sight); box-shadow: 0 0 8px rgba(57, 255, 20, 0.5); }
     .checkmark:after { content: ""; display: none; width: 5px; height: 10px; border: solid #000; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
     .checkbox-container input:checked ~ .checkmark:after { display: block; }
     
@@ -44,19 +44,68 @@
     .details { flex-grow: 1; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
     .time-tag { font-size: 11px; font-weight: 800; color: var(--time); letter-spacing: 0.5px; }
     .name-link { font-weight: 700; color: #fff; font-size: 15px; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.35); text-underline-offset: 3px; }
-    .sub-link { font-weight: 700; color: #ff9f0a; font-size: 13px; text-decoration: underline; text-decoration-color: rgba(255,159,10,0.45); text-underline-offset: 2px; }
+    .sub-link { font-weight: 700; color: #ff9e00; font-size: 13px; text-decoration: underline; text-decoration-color: rgba(255,158,0,0.45); text-underline-offset: 2px; }
     .meta-sub { font-size: 11px; color: var(--muted); font-weight: 500; }
     
     .btn-group { display: flex; gap: 6px; flex-shrink: 0; align-items: center; }
-    .ticket-btn { background: var(--ticket); color: #000000; font-size: 11px; font-weight: 900; text-transform: uppercase; padding: 5px 8px; border-radius: 6px; text-decoration: none; letter-spacing: 0.5px; }
-    .badge { font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 5px 8px; border-radius: 6px; letter-spacing: 0.5px; }
+    .ticket-btn {
+      background: rgba(255, 42, 95, 0.16);
+      color: #ff5c85;
+      border: 1px solid rgba(255, 42, 95, 0.75);
+      box-shadow: 0 0 10px rgba(255, 42, 95, 0.35), inset 0 0 6px rgba(255, 42, 95, 0.15);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 5px 8px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 5px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
     
-    .tag-flight { background: rgba(94, 92, 230, 0.25); color: #9d9bf5; border: 1px solid rgba(94, 92, 230, 0.5); }
-    .tag-sight { background: rgba(48, 209, 88, 0.2); color: #32d74b; border: 1px solid rgba(48, 209, 88, 0.45); }
-    .tag-food { background: rgba(255, 159, 10, 0.22); color: #ffb340; border: 1px solid rgba(255, 159, 10, 0.45); }
-    .tag-shop { background: rgba(255, 55, 95, 0.22); color: #ff6482; border: 1px solid rgba(255, 55, 95, 0.45); }
-    .tag-music { background: rgba(191, 90, 242, 0.22); color: #da8fff; border: 1px solid rgba(191, 90, 242, 0.45); }
-    .tag-hotel { background: rgba(0, 199, 190, 0.22); color: #40e0d0; border: 1px solid rgba(0, 199, 190, 0.45); }
+    .tag-flight {
+      background: rgba(0, 210, 255, 0.12);
+      color: #4de1ff;
+      border: 1px solid rgba(0, 210, 255, 0.65);
+      box-shadow: 0 0 8px rgba(0, 210, 255, 0.25);
+    }
+    .tag-sight {
+      background: rgba(57, 255, 20, 0.12);
+      color: #6eff52;
+      border: 1px solid rgba(57, 255, 20, 0.65);
+      box-shadow: 0 0 8px rgba(57, 255, 20, 0.25);
+    }
+    .tag-food {
+      background: rgba(255, 158, 0, 0.14);
+      color: #ffb84d;
+      border: 1px solid rgba(255, 158, 0, 0.65);
+      box-shadow: 0 0 8px rgba(255, 158, 0, 0.25);
+    }
+    .tag-shop {
+      background: rgba(255, 0, 127, 0.14);
+      color: #ff66b2;
+      border: 1px solid rgba(255, 0, 127, 0.65);
+      box-shadow: 0 0 8px rgba(255, 0, 127, 0.25);
+    }
+    .tag-music {
+      background: rgba(199, 125, 255, 0.14);
+      color: #dca6ff;
+      border: 1px solid rgba(199, 125, 255, 0.65);
+      box-shadow: 0 0 8px rgba(199, 125, 255, 0.25);
+    }
+    .tag-hotel {
+      background: rgba(0, 245, 212, 0.12);
+      color: #52ffe8;
+      border: 1px solid rgba(0, 245, 212, 0.65);
+      box-shadow: 0 0 8px rgba(0, 245, 212, 0.25);
+    }
   </style>
 </head>
 <body>
